@@ -28,7 +28,6 @@ const Cart = () => {
             setCart([...cart])
         }
     }
-
     
 
     return (
@@ -45,7 +44,8 @@ const Cart = () => {
                                 <CartItem
                                     item={item}
                                     key={item.id}
-                                    index={index} removeItem={removeItem}
+                                    index={index} 
+                                    removeItem={removeItem}
                                 />
                             )
                         })
