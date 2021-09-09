@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/store-app/static/css/main.e490b6bd.chunk.css",
+    "main.js": "/store-app/static/js/main.92551931.chunk.js",
+    "main.js.map": "/store-app/static/js/main.92551931.chunk.js.map",
+    "runtime-main.js": "/store-app/static/js/runtime-main.fcb2293a.js",
+    "runtime-main.js.map": "/store-app/static/js/runtime-main.fcb2293a.js.map",
+    "static/js/2.81dda8b3.chunk.js": "/store-app/static/js/2.81dda8b3.chunk.js",
+    "static/js/2.81dda8b3.chunk.js.map": "/store-app/static/js/2.81dda8b3.chunk.js.map",
+    "static/js/3.0ed22f90.chunk.js": "/store-app/static/js/3.0ed22f90.chunk.js",
+    "static/js/3.0ed22f90.chunk.js.map": "/store-app/static/js/3.0ed22f90.chunk.js.map",
+    "index.html": "/store-app/index.html",
+    "static/css/main.e490b6bd.chunk.css.map": "/store-app/static/css/main.e490b6bd.chunk.css.map",
+    "static/js/2.81dda8b3.chunk.js.LICENSE.txt": "/store-app/static/js/2.81dda8b3.chunk.js.LICENSE.txt",
+    "static/media/Nike.5eedf5f7.jpg": "/store-app/static/media/Nike.5eedf5f7.jpg",
+    "static/media/img01.jpg": "/store-app/static/media/img01.b982c5d1.jpg",
+    "static/media/img011.jpg": "/store-app/static/media/img011.516d92a4.jpg",
+    "static/media/img02.jpg": "/store-app/static/media/img02.ed4b76a0.jpg",
+    "static/media/img03.jpg": "/store-app/static/media/img03.475683e4.jpg",
+    "static/media/img04.jpg": "/store-app/static/media/img04.faae8589.jpg",
+    "static/media/img05.jpg": "/store-app/static/media/img05.b8381f5f.jpg",
+    "static/media/img06.jpg": "/store-app/static/media/img06.9a6f6c09.jpg",
+    "static/media/img07.jpg": "/store-app/static/media/img07.0132f534.jpg",
+    "static/media/img08.jpg": "/store-app/static/media/img08.81e412af.jpg",
+    "static/media/img09.jpg": "/store-app/static/media/img09.2672b0a2.jpg",
+    "static/media/img10.jpg": "/store-app/static/media/img10.91365af8.jpg",
+    "static/media/inicio.4a59ed5e.jpg": "/store-app/static/media/inicio.4a59ed5e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fcb2293a.js",
+    "static/js/2.81dda8b3.chunk.js",
+    "static/css/main.e490b6bd.chunk.css",
+    "static/js/main.92551931.chunk.js"
+  ]
+}
