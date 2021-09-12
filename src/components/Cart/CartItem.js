@@ -12,7 +12,7 @@ const CartItem = ({item, index, removeItem }) => {
 
     const add = (e)=>{
         e.preventDefault()
-        quantity < item.cantidad ? setQuantity(quantity + 1) : alert('No se puede agregar más productos')
+        quantity < item.cantidad ? setQuantity(quantity + 1) : alert('No more products can be added')
     }
     return (
         <div className='cart_item'>

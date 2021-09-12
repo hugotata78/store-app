@@ -25,7 +25,7 @@ export const DataProvider = (props) => {
             setCart([...cart,...data])
         }
         else{
-            alert('El producto ya se encuentra añadido al carrito')
+            alert('The product is already added to the cart')
         }
     }
 
@@ -39,6 +39,8 @@ export const DataProvider = (props) => {
     useEffect(()=>{
         localStorage.setItem('dataCart',JSON.stringify(cart))
     },[cart])
+
+    
     const value = {
         products: [products],
         menu: [menu, setMenu],
