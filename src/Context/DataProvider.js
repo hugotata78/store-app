@@ -7,6 +7,7 @@ export const DataProvider = (props) => {
     const [products, setProducts] = useState([])
     const [menu, setMenu] = useState(false)
     const [cart, setCart] = useState([])
+    const [totalPrice,setTotalPrice] = useState(0)
 
     useEffect(() => {
         const products = data.items
@@ -29,6 +30,14 @@ export const DataProvider = (props) => {
         }
     }
 
+    const getTotalPrice = ()=>{
+        const res = cart.length === 0 ? 0 : cart.reduce((prev,index)=>{
+            return prev + (index.price * index.cantidad)
+        }, 0)
+
+        return res
+    }
+
     useEffect(()=>{
         const dataCart = JSON.parse(localStorage.getItem('dataCart'))
         if(dataCart){
@@ -40,12 +49,16 @@ export const DataProvider = (props) => {
         localStorage.setItem('dataCart',JSON.stringify(cart))
     },[cart])
 
+    useEffect(()=>{
+        setTotalPrice(getTotalPrice())
+    })
     
     const value = {
         products: [products],
         menu: [menu, setMenu],
         add:add,
-        cart: [cart, setCart]
+        cart: [cart, setCart],
+        totalPrice:[totalPrice,setTotalPrice]
     }
 
     return (

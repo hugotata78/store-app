@@ -11,6 +11,7 @@ const Cart = () => {
     const value = useContext(DataContext)
     const [menu, setMenu] = value.menu
     const [cart, setCart] = value.cart
+    const [totalPrice,seTotalPrice] = value.totalPrice
 
 
     const show1 = menu ? 'carts show' : 'carts'
@@ -27,7 +28,25 @@ const Cart = () => {
             setCart([...cart])
         }
     }
+    const subtract = (e,id,index)=>{
+        e.preventDefault()
+        cart.forEach(item=>{
+            if(item.id === id){
+                item.cantidad <= 1 ? removeItem(e,id,index) : item.cantidad -= 1
+                setCart([...cart]) 
+            }
+        })
+    }
 
+    const add = (e,id,index)=>{
+        e.preventDefault()
+        cart.forEach(item=>{
+            if(item.id === id){
+                item.cantidad += 1
+                setCart([...cart]) 
+            }
+        })
+    }
 
     return (
         <div className={show1}>
@@ -47,6 +66,8 @@ const Cart = () => {
                                     key={item.id}
                                     index={index}
                                     removeItem={removeItem}
+                                    add={add}
+                                    subtract={subtract}
                                 />
                             )
                         })
@@ -54,7 +75,7 @@ const Cart = () => {
                 </div>
                 {
                     cart.length > 0 && <div className='cart_footer'>
-                        <h3>Total: </h3>
+                        <h3>Total: ${totalPrice} </h3>
                         <button className='btn'>Payment</button>
                     </div>
                 }
