@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { DataContext } from '../../Context/DataProvider'
-import CartItem from './CartItem'
 import EmptyCart from './EmptyCart'
+import ListProducts from './ListProducts'
 
 
 
@@ -11,11 +11,9 @@ const Cart = () => {
     const value = useContext(DataContext)
     const [menu, setMenu] = value.menu
     const [cart, setCart] = value.cart
-    const [totalPrice,seTotalPrice] = value.totalPrice
-
-
-    const show1 = menu ? 'carts show' : 'carts'
+    const [totalPrice, seTotalPrice] = value.totalPrice
     const show2 = menu ? 'cart_container show' : 'cart_container'
+    const show1 = menu ? 'carts show' : 'carts'
 
     const toogleFalse = () => {
         setMenu(false)
@@ -28,58 +26,42 @@ const Cart = () => {
             setCart([...cart])
         }
     }
-    const subtract = (e,id,index)=>{
+    const subtract = (e, id, index) => {
         e.preventDefault()
-        cart.forEach(item=>{
-            if(item.id === id){
-                item.cantidad <= 1 ? removeItem(e,id,index) : item.cantidad -= 1
-                setCart([...cart]) 
+        cart.forEach(item => {
+            if (item.id === id) {
+                item.cantidad <= 1 ? removeItem(e, id, index) : item.cantidad -= 1
+                setCart([...cart])
             }
         })
     }
 
-    const add = (e,id,index)=>{
+    const add = (e, id, index) => {
         e.preventDefault()
-        cart.forEach(item=>{
-            if(item.id === id){
+        cart.forEach(item => {
+            if (item.id === id) {
                 item.cantidad += 1
-                setCart([...cart]) 
+                setCart([...cart])
             }
         })
     }
+
 
     return (
         <div className={show1}>
-            <div className={show2}>
-                <div className='cart_close' onClick={toogleFalse}>
-                    <box-icon name='x'></box-icon>
-                </div>
-                {cart.length > 0 && <h2>Your cart</h2>}
-
-                <div className='cart_center'>
-                    {cart.length === 0 && <EmptyCart />}
-                    {
-                        cart.length && cart.map((item, index) => {
-                            return (
-                                <CartItem
-                                    item={item}
-                                    key={item.id}
-                                    index={index}
-                                    removeItem={removeItem}
-                                    add={add}
-                                    subtract={subtract}
-                                />
-                            )
-                        })
-                    }
-                </div>
-                {
-                    cart.length > 0 && <div className='cart_footer'>
-                        <h3>Total: ${totalPrice} </h3>
-                        <button className='btn'>Payment</button>
-                    </div>
-                }
-            </div>
+            {!cart.length && <EmptyCart show2={show2} />}
+            {
+                cart.length &&
+                <ListProducts
+                    cart={cart} 
+                    totalPrice={totalPrice}
+                    show2={show2}
+                    toogleFalse={toogleFalse}
+                    removeItem={removeItem}
+                    subtract={subtract}
+                    add={add}
+                />
+            }
         </div>
     )
 }
