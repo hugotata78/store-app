@@ -9,11 +9,11 @@ const CardProduct = ({ product }) => {
     
     return (
         <div className='product'>
-            <a href='#'>
+            <Link to={`/product/${product.id}`}>
                 <div className='product_img'>
                     <img src={product.image.default} alt='img' />
                 </div>
-            </a>
+            </Link>
             <div className='product_footer'>
                 <h1>{product.title}</h1>
                 <p>{product.category}</p>
@@ -24,9 +24,9 @@ const CardProduct = ({ product }) => {
                     Add to Cart
                 </button>
                 <div>
-                    <a href='' className='btn'>
+                    <Link to={`/product/${product.id}`} className='btn'>
                         View
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
