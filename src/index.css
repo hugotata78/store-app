@@ -465,6 +465,19 @@ header .cart span{
   color: #30333a;
 }
 
+
+.related{
+  text-align: center;
+  background: #2e2e2e;
+  color: white;
+  max-width: 350px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
 @media only screen and (max-width: 1000px) {
   .cart_item{
     width: 92%;
