@@ -26,7 +26,15 @@ export const DataProvider = (props) => {
             setCart([...cart,...data])
         }
         else{
-            alert('The product is already added to the cart')
+            const response = window.confirm('The product is already added to the cart!\nDo you want to add another item for this product?')
+            if(response){
+                cart.forEach(item => {
+                    if (item.id === id) {
+                        item.cantidad += 1
+                        setCart([...cart])
+                    }
+                })
+            }
         }
     }
 
