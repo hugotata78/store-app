@@ -438,9 +438,11 @@ header .cart span{
 }
 
 .details img{
+  width: 100%;
+  max-width: 700px;
   min-height: 300px;
   object-fit: contain;
-  margin-top: 4rem;
+  margin: 4rem auto auto auto;
   z-index: -1;
 }
 
@@ -465,7 +467,24 @@ header .cart span{
   color: #30333a;
 }
 
+.details .product{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  box-shadow: 1px 10px 10px 2px rgb(0, 0, 0,.2);
+  border:6px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+}
 
+.details .btn_container{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap:1rem 2rem;
+}
 .related{
   text-align: center;
   background: #2e2e2e;

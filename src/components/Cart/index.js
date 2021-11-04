@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { DataContext } from '../../Context/DataProvider'
+import { useHistory } from "react-router-dom";
 import EmptyCart from './EmptyCart'
 import ListProducts from './ListProducts'
 
@@ -14,9 +15,15 @@ const Cart = () => {
     const [totalPrice, seTotalPrice] = value.totalPrice
     const show2 = menu ? 'cart_container show' : 'cart_container'
     const show1 = menu ? 'carts show' : 'carts'
+    const history = useHistory()
 
     const toogleFalse = () => {
         setMenu(false)
+    }
+
+    const gotToProducts = ()=>{
+        setMenu(false)
+        history.push('/products')
     }
 
     const removeItem = (e, id, index) => {
@@ -49,7 +56,7 @@ const Cart = () => {
 
     return (
         <div className={show1}>
-            {!cart.length && <EmptyCart show2={show2} />}
+            {!cart.length && <EmptyCart show2={show2} toogleFalse={toogleFalse} gotToProducts={gotToProducts} />}
             {
                 cart.length &&
                 <ListProducts

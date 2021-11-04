@@ -1,22 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router";
-import { useContext } from "react/cjs/react.development";
-import { DataContext } from "../../Context/DataProvider";
 
-const EmptyCart = ({ show2 }) => {
+const EmptyCart = ({ show2, toogleFalse, gotToProducts }) => {
 
-    const value = useContext(DataContext)
-    const [menu, setMenu] = value.menu
-    const history = useHistory()
 
-    const toogleFalse = () => {
-        setMenu(false)
-    }
-
-    const gotToProducts = ()=>{
-        setMenu(false)
-        history.push('/products')
-    }
 
     return (
         <div className={show2}>
