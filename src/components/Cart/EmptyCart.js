@@ -3,7 +3,6 @@ import React from "react";
 const EmptyCart = ({ show2, toogleFalse, gotToProducts }) => {
 
 
-
     return (
         <div className={show2}>
             <div className='cart_close' onClick={toogleFalse}>

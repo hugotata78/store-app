@@ -14,7 +14,7 @@ const Headers = ()=>{
     }
 
     return(
-        <header className='Header'>
+        <header className='header'>
             <Link to='/'>
                 <div className='logo'>
                     <img src={Nike} alt='Nike' width='150'/>
